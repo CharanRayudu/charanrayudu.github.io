@@ -580,6 +580,8 @@ a:hover {
 }
 
 .navbar-brand {
+    position: relative;
+    left: 10px;
     color: #0078ff;
 }
 
