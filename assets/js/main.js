@@ -10,31 +10,31 @@ swup.on('contentReplaced', update);
 
 
 function update() {
-    if (window.location.href == "https://bindhumadhav.in/ch/index.html") {
+    if (window.location.href == "https:charanrayudu.github.io/index.html") {
         document.getElementById('mm1').classList.remove('active');
         document.getElementById('mm2').classList.remove('active');
         document.getElementById('mm3').classList.remove('active');
         document.getElementById('mm4').classList.remove('active');
     }
-    if (window.location.href == "https://bindhumadhav.in/ch/about.html") {
+    if (window.location.href == "https:charanrayudu.github.io/about.html") {
         document.getElementById('mm1').classList.add('active');
         document.getElementById('mm2').classList.remove('active');
         document.getElementById('mm3').classList.remove('active');
         document.getElementById('mm4').classList.remove('active');
     }
-    if (window.location.href == "https://bindhumadhav.in/ch/project.html") {
+    if (window.location.href == "https:charanrayudu.github.io/project.html") {
         document.getElementById('mm1').classList.remove('active');
         document.getElementById('mm2').classList.add('active');
         document.getElementById('mm3').classList.remove('active');
         document.getElementById('mm4').classList.remove('active');
     }
-    if (window.location.href == "https://bindhumadhav.in/ch/achievments.html") {
+    if (window.location.href == "https:charanrayudu.github.io/achievments.html") {
         document.getElementById('mm1').classList.remove('active');
         document.getElementById('mm2').classList.remove('active');
         document.getElementById('mm3').classList.add('active');
         document.getElementById('mm4').classList.remove('active');
     }
-    if (window.location.href == "https://bindhumadhav.in/ch/blogs.html") {
+    if (window.location.href == "https:charanrayudu.github.io/blogs.html") {
         document.getElementById('mm1').classList.remove('active');
         document.getElementById('mm2').classList.remove('active');
         document.getElementById('mm3').classList.remove('active');
