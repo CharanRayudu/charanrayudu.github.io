@@ -1247,3 +1247,7 @@ html.is-leaving .transition-swipedown {
 .contactIconItem {
     color: white;
 }
+
+.hidden {
+    display: none;
+}
