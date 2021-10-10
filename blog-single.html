@@ -89,15 +89,15 @@
                                     <img src="assets/img/post-1.jpg" class="img-fluid" alt="">
                                 </div>
                                 <div class="post-meta">
-                                    <h1 class="article-title">Lorem ipsum dolor sit amet consec tetur adipisicing</h1>
+                                    <h1 class="article-title">Arbitrary File Uploading Leads to Remote Code Execution</h1>
                                     <ul>
                                         <li>
                                             <span class="ion-ios-person"></span>
-                                            <a href="#">Jason London</a>
+                                            <a href="#">CharanRayudu</a>
                                         </li>
                                         <li>
                                             <span class="ion-pricetag"></span>
-                                            <a href="#">Web Design</a>
+                                            <a href="#">Pentest</a>
                                         </li>
                                         <li>
                                             <span class="ion-chatbox"></span>
@@ -107,20 +107,87 @@
                                 </div>
                                 <div class="article-content" style="color: white;background-color: #444;">
                                     <p>
-                                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum
-                                        ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla quis lorem ut libero malesuada feugiat.
+                                        This vulnerability was found during testing on a Private Company which called me for Penetration Testing. The Company is based on the Digital Asset Trading. I have anonymized, altered, or removed  all detail about the company to keep this information confidential in line with pentesting policies.
                                     </p>
                                     <p>
-                                        Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                                        sollicitudin molestie malesuada.
+                                        TL;DR
                                     </p>
                                     <p>
-                                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                                        arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada.
+                                        Image file upload functionality doesn’t validate a file extension but validates Content-type and a content of a file. Application sets Content-type of HTTP response based on a file extension. Image, containing PHP code and a file extension set to .php, was uploaded and allowed remote code execution
                                     </p>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus suscipit tortor eget
-                                        felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+                                        An application had image file upload functionality and was written in PHP. I started testing for <a href="https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload">unrestricted file upload</a>, knowing a good starting point is the OWASP Testing Guide. As always, I read responses from the server, analysed them and got the following information:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            When a file sent to the server is verified against Content-type and file header, only images are allowed
+                                        </li>
+                                        <li>
+                                            A file can have any extension you like, extension defines Content-type of HTTP response sent by the server
+                                        </li>
+                                        <li>
+                                            The file is transformed by the server
+                                        </li>
+                                        <li>
+                                            The file's metadata is cleared (no EXIF data)
+                                        </li>
+                                        <li>
+                                            During testing the newest version of ImageMagick was used (disclosed in one of HTTP responses sent by the server)
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        As you can see, injecting PHP code in EXIF data did not result in immediate exploitability. At that point I started thinking of next possible step. I knew I was looking for RCE.
+                                    </p>
+                                    <p>
+                                        I reached the following conclusion: <code>If an uploaded image contains PHP code and that code is not modified, and file extension is one of php, then application should execute the file</code>. The challenge here is to find a place in an image where PHP code can be placed. Of course, you can read RFC/specifications and it can be useful. However, it may be difficult to apply that knowledge to a real situation as we don't have access to code and we don't know which part of an RFC can be useful. As I knew what I wanted to achieve, I could create some plan. Usually, if the problem is complex, I use a <code>divide and conquer</code> approach (like the way algorithm works).
+                                    </p>
+                                    <p>
+                                        The plan:
+                                    </p>
+                                    <ol>
+                                    <li>
+                                        Define a list of image file formats.
+                                    </li>
+                                    <li>
+                                        Try to identify transformations made to the image by the server.
+                                    </li>
+                                    <li>
+                                        Recreate the situation (transformations) locally using ImageMagick and PHP code to have a local testing capability.
+                                    </li>
+                                    <li>
+                                        Are there any unmodified spaces in the image file?
+                                    </li>
+                                    <li>
+                                        Yes, go to step 6. No, go to step 1.
+                                    </li>
+                                    <li>
+                                        Inject a code to an identified space and test if the injected code is executed.
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        It can be easily noticed that the plan is just an algorithm.
+                                    </p>
+                                    <p>
+                                        I started with a jpg shell uploading i.e., injecting a Remote Code Execution payload into the jpeg file. This can be done through a EXIF Editor.
+                                    </p>
+                                    <p>
+                                        The payload I injected to the image is
+                                    </p> 
+                                    <p> 
+                                        <code><style>body{font-size:0;}h1{font-size:12px}</style><h1><?php if(isset($_REQUEST['cmd'])){system($_REQUEST['cmd']);}else{echo 'RCE';}_half_compiler();?></h1></code>
+                                    </p>
+                                    <p>
+                                        Now after injecting the payload to the image, Rename the file
+                                    </p>
+                                    <p>
+                                        Initially it was "0.jpg", I made it as "0.php.jpg"
+                                        (which does make it executable since we titled as double extended file)
+                                    </p>
+                                    <p>
+                                        Now , try to upload the file. And intercept the request in burpsuite. Now I got the following request.
+                                    </p>
+                                    <p>
+                                        Then!, with no late I edited the filename as "0.php" and forwarded the request.
                                     </p>
                                     <blockquote class="blockquote">
                                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
