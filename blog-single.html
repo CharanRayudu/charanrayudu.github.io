@@ -98,16 +98,110 @@
                                         <li>
                                             <span class="ion-pricetag"></span>
                                             <a href="#">Pentest</a>
+<<<<<<< HEAD
+=======
                                         </li>
                                         <li>
                                             <span class="ion-chatbox"></span>
                                             <a href="#">14</a>
+>>>>>>> 8913ea0a681a15c50f2157784e6b0ac97896b645
                                         </li>
+                                        
                                     </ul>
                                 </div>
                                 <div class="article-content" style="color: white;background-color: #444;">
                                     <p>
                                         This vulnerability was found during testing on a Private Company which called me for Penetration Testing. The Company is based on the Digital Asset Trading. I have anonymized, altered, or removed  all detail about the company to keep this information confidential in line with pentesting policies.
+<<<<<<< HEAD
+                                    </p>
+                                    <p>
+                                        TL;DR
+                                    </p>
+                                    <p>
+                                        Image file upload functionality doesn’t validate a file extension but validates Content-type and a content of a file. Application sets Content-type of HTTP response based on a file extension. Image, containing PHP code and a file extension set to .php, was uploaded and allowed remote code execution
+                                    </p>
+                                    <p>
+                                        An application had image file upload functionality and was written in PHP. I started testing for <a href="https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload">unrestricted file upload</a>, knowing a good starting point is the OWASP Testing Guide. As always, I read responses from the server, analysed them and got the following information:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            When a file sent to the server is verified against Content-type and file header, only images are allowed
+                                        </li>
+                                        <li>
+                                            A file can have any extension you like, extension defines Content-type of HTTP response sent by the server
+                                        </li>
+                                        <li>
+                                            The file is transformed by the server
+                                        </li>
+                                        <li>
+                                            The file's metadata is cleared (no EXIF data)
+                                        </li>
+                                        <li>
+                                            During testing the newest version of ImageMagick was used (disclosed in one of HTTP responses sent by the server)
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        As you can see, injecting PHP code in EXIF data did not result in immediate exploitability. At that point I started thinking of next possible step. I knew I was looking for RCE.
+                                    </p>
+                                    <p>
+                                        I reached the following conclusion: <code>If an uploaded image contains PHP code and that code is not modified, and file extension is one of php, then application should execute the file</code>. The challenge here is to find a place in an image where PHP code can be placed. Of course, you can read RFC/specifications and it can be useful. However, it may be difficult to apply that knowledge to a real situation as we don't have access to code and we don't know which part of an RFC can be useful. As I knew what I wanted to achieve, I could create some plan. Usually, if the problem is complex, I use a <code>divide and conquer</code> approach (like the way algorithm works).
+                                    </p>
+                                    <p>
+                                        The plan:
+                                    </p>
+                                    <ol>
+                                    <li>
+                                        Define a list of image file formats.
+                                    </li>
+                                    <li>
+                                        Try to identify transformations made to the image by the server.
+                                    </li>
+                                    <li>
+                                        Recreate the situation (transformations) locally using ImageMagick and PHP code to have a local testing capability.
+                                    </li>
+                                    <li>
+                                        Are there any unmodified spaces in the image file?
+                                    </li>
+                                    <li>
+                                        Yes, go to step 6. No, go to step 1.
+                                    </li>
+                                    <li>
+                                        Inject a code to an identified space and test if the injected code is executed.
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        It can be easily noticed that the plan is just an algorithm.
+                                    </p>
+                                    <p>
+                                        I started with a jpg shell uploading i.e., injecting a Remote Code Execution payload into the jpeg file. This can be done through a EXIF Editor.
+                                    </p>
+                                    <p>
+                                        The payload I injected to the image is
+                                    </p> 
+                                    <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=text%2Fx-java&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=1x&wm=false&code=%253Cstyle%253Ebody%257Bfont-size%253A0%253B%257Dh1%257Bfont-size%253A12px%257D%253C%252Fstyle%253E%253Ch1%253E%253C%253Fphp%2520if%28isset%28%2524_REQUEST%255B%27cmd%27%255D%29%29%257Bsystem%28%2524_REQUEST%255B%27cmd%27%255D%29%253B%257Delse%257Becho%2520%27RCE%27%253B%257D_half_compiler%28%29%253B%253F%253E%253C%252Fh1%253E"
+                                    style="width: 1024px; height: 222px; border:0; transform: scale(1); overflow:hidden;"
+                                    sandbox="allow-scripts allow-same-origin">
+                                    </iframe>
+                                    <p>
+                                        Now after injecting the payload to the image, Rename the file
+                                    </p>
+                                    <p>
+                                        Initially it was "0.jpg", I made it as "0.php.jpg"
+                                        (which does make it executable since we titled as double extended file)
+                                    </p>
+                                    <p>
+                                        Now , try to upload the file. And intercept the request in burpsuite. Now I got the following request.
+                                    </p>
+                                    <img src=assets/img/rce-1.png alt="">
+                                    <p>
+
+                                    </p>
+                                    <p>
+                                        Then!, with no late I edited the filename as "0.php" and forwarded the request.
+                                    </p>
+                                    <p>
+                                        Now, here when u see that our uploaded file looks like crashed. We can say that here we can find exploit!
+=======
                                     </p>
                                     <p>
                                         TL;DR
@@ -182,20 +276,30 @@
                                     <p>
                                         Initially it was "0.jpg", I made it as "0.php.jpg"
                                         (which does make it executable since we titled as double extended file)
+>>>>>>> 8913ea0a681a15c50f2157784e6b0ac97896b645
+                                    </p>
+                                    <img src=assets/img/rce-2.png alt="">
+                                    <p>
+<<<<<<< HEAD
+                                        Next step is to open the uploaded image in new tab which also mean opening image location in the website. As said the url does look like this
+                                        https://example.com/assets/pictures/4f3c3b82e3145809939c2929d98af2b4.php 
                                     </p>
                                     <p>
+                                        Now, on a ease add ?cmd= to the url, so it will be as
+                                         https://example.com/assets/pictures/4f3c3b82e3145809939c2929d98af2b4.php?cmd=
+=======
                                         Now , try to upload the file. And intercept the request in burpsuite. Now I got the following request.
                                     </p>
                                     <p>
                                         Then!, with no late I edited the filename as "0.php" and forwarded the request.
+>>>>>>> 8913ea0a681a15c50f2157784e6b0ac97896b645
                                     </p>
-                                    <blockquote class="blockquote">
-                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                    </blockquote>
                                     <p>
-                                        Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                                        sollicitudin molestie malesuada.
+                                        Finally, we have terminal which means it got exploited.
+                                        As a example, I used "ls -la", and BOOOOOMMMM!!!!!!!!!!!
                                     </p>
+                                    <img src=assets/img/rce-3.png alt="">
+                                    
                                 </div>
                             </div>
                         </div>
