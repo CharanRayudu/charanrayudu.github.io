@@ -1,66 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Srisai Charan Rayudu | Cybersecurity Engineer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script defer src="script.js"></script>
-  <style>
-    #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-  <!-- Three.js and GLTFLoader -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/FontLoader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/geometries/TextGeometry.js"></script>
-
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Charan Rayudu | Cybersecurity Engineer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="Charan Rayudu | Cybersecurity Engineer" />
+      
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+      
+        <!-- 3D Background Support -->
+        <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js" defer></script>
+      </head>      
 <body>
-<!-- Responsive Navbar -->
-<nav class="navbar">
-    <div class="container nav-container">
-      <h1 class="logo">Charan</h1>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <label for="nav-toggle" class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  <!-- 3D Background Canvas -->
+<!-- Canvas Background -->
 <canvas id="bg"></canvas>
 
-  <!-- Hero Section -->
-  <div class="hero-background-wrapper">
-    <div class="animated-glow-bg"></div>
-    <section id="hero">
-      <!-- your existing hero content -->
-    </section>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <h1 class="logo">Charan</h1>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="burger">
+      <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
+    </ul>
   </div>
-  
+</nav>
+
+<!-- Hero Section -->
+<div class="hero-background-wrapper">
+<div class="parallax-layer" data-speed="0.3"></div>
+  <div class="animated-glow-bg"></div>
   <section id="hero">
     <div class="container hero-flex">
       <div class="hero-text">
-        <h1 class="intro">Hi, I'm <span class="highlight">Srisai Charan Rayudu</span></h1>
-        <p class="tagline">Cybersecurity Engineer | Red Teamer | Bug Bounty Hunter</p>
+        <h1 class="intro">Hi, I'm <span class="highlight">Charan Rayudu</span></h1>
+        <p class="tagline typewriter" id="typewriter"></p>
         <div class="cta-buttons">
           <a href="assets/resume.pdf" class="btn">View Resume</a>
           <a href="https://github.com/CharanRayudu" class="btn">GitHub</a>
@@ -71,142 +54,146 @@
         <img src="assets/img/charan-3d.png" alt="Charan 3D Avatar" />
       </div>
     </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll Down">
+      <span></span>
+    </a>
   </section>
-  
+</div>
 
 <!-- About Me Section -->
 <section id="about" data-aos="fade-right">
-    <div class="container">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <img src="assets/profile.jpg" alt="Charan's Profile Picture" class="profile-pic" />
-        <p>
-          I'm a cybersecurity engineer with a passion for ethical hacking, red teaming, and automating security workflows. I've helped secure 40+ organizations, delivered DevSecOps automation, and actively hunt bugs on platforms like HackerOne and Bugcrowd. I also train students and professionals on secure coding and vulnerability assessment.
-        </p>
-      </div>
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="assets/profile.jpg" alt="Charan's Profile Picture" class="profile-pic" />
+      <p>
+        I'm a cybersecurity engineer with a passion for ethical hacking, red teaming, and automating security workflows. I've helped secure 40+ organizations, delivered DevSecOps automation, and actively hunt bugs on platforms like HackerOne and Bugcrowd. I also train students and professionals on secure coding and vulnerability assessment.
+      </p>
     </div>
-  </section>
-  
-  <!-- Experience Section -->
-  <section id="experience" data-aos="fade-left">
-    <div class="container">
-      <h2>Experience</h2>
-      <div class="timeline">
-  
-        <div class="timeline-item">
-          <div class="timeline-date">Oct 2024 – Present</div>
-          <div class="timeline-content">
-            <h3>🛡️ Cyber Security Engineer — DevFi Inc.</h3>
-            <ul>
-              <li>Led IT audits improving vulnerability management by 30%.</li>
-              <li>Streamlined event detection & firewall ops to meet 100% compliance.</li>
-              <li>Trained 200+ IT staff, reducing incidents by 25%.</li>
-            </ul>
-          </div>
-        </div>
-  
-        <div class="timeline-item">
-          <div class="timeline-date">Aug 2023 – May 2024</div>
-          <div class="timeline-content">
-            <h3>🧑‍🏫 Graduate Teaching Assistant — George Mason University</h3>
-            <ul>
-              <li>Built Python tools to detect leaked credentials across 1M+ websites.</li>
-              <li>Mentored 100+ students, reducing project vulnerabilities by 40%.</li>
-            </ul>
-          </div>
-        </div>
-  
-        <div class="timeline-item">
-          <div class="timeline-date">Mar 2020 – Aug 2022</div>
-          <div class="timeline-content">
-            <h3>🤞 Bug Bounty Hunter — Freelance</h3>
-            <ul>
-              <li>Discovered critical RCE, SSRF, and auth bypass bugs in 40+ orgs.</li>
-              <li>Authored reconnaissance tools; active in CTFs & security communities.</li>
-            </ul>
-          </div>
-        </div>
-  
-      </div>
-    </div>
-  </section>
-  
-  <!-- Projects Section -->
-  <section id="projects" data-aos="zoom-in-up">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-  
-        <div class="project-card">
-          <h3>ProtoP — Prototype Pollution Scanner</h3>
-          <p>A Golang-based scanner leveraging Chrome DevTools Protocol to detect prototype pollution vulnerabilities.</p>
-          <p><strong>Tech:</strong> Go, CDP, GitHub Actions</p>
-          <a href="https://github.com/CharanRayudu/ProtoP" target="_blank" class="btn">View on GitHub</a>
-        </div>
-  
-        <div class="project-card">
-          <h3>Automation Nuclei</h3>
-          <p>Automated scanning script using Nuclei templates for 500+ live subdomains using Bash and OSINT tools.</p>
-          <p><strong>Tech:</strong> Bash, Nuclei, Linux, Recon Tools</p>
-          <a href="https://github.com/CharanRayudu/Automation-Nuclei" target="_blank" class="btn">View on GitHub</a>
-        </div>
-  
-        <div class="project-card">
-          <h3>Tiny Recon</h3>
-          <p>Recon script combining Nmap, WhatWeb, and crt.sh to scan 100+ subdomains with HTTP service fingerprinting.</p>
-          <p><strong>Tech:</strong> Bash, Nmap, WhatWeb, crt.sh</p>
-          <a href="https://github.com/CharanRayudu/Tiny-Recon" target="_blank" class="btn">View on GitHub</a>
-        </div>
-  
-      </div>
-    </div>
-  </section>
-  
-  <!-- Certifications Section -->
-  <section id="certifications" data-aos="flip-up">
-    <div class="container">
-      <h2>Certifications & Achievements</h2>
-      <ul class="cert-list">
-        <li>🛡️ <a href="https://www.credly.com/badges/6683f6ca-95bb-4e78-803f-2a6155730daa" target="_blank">CompTIA Security+ CE (SY0-701)</a></li>
-        <li>☁️ <a href="https://www.credly.com/badges/f57609f5-7d35-42ba-a1da-5d4e4e89f82d" target="_blank">AWS Certified Cloud Practitioner</a></li>
-        <li>🎯 TryHackMe Rank: 20709 (Apr 2024)</li>
-        <li>🐞 Bugcrowd Rank: 4540 (Aug 2022)</li>
-        <li>🏆 Hall of Fame recognitions for 40+ organizations</li>
-      </ul>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" data-aos="fade-up">
-    <div class="container">
-      <h2>Contact</h2>
-      <form action="https://formspree.io/f/mwkgepnz" method="POST" class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-  
-      <div class="social-links">
-        <a href="mailto:charan.rayudu1784@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/charanrayudu" target="_blank">LinkedIn</a>
-        <a href="https://github.com/CharanRayudu" target="_blank">GitHub</a>
+<!-- Experience Section -->
+<section id="experience" data-aos="fade-left">
+  <div class="container">
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2024 – Present</div>
+        <div class="timeline-content">
+          <h3>🛡️ Cyber Security Engineer — DevFi Inc.</h3>
+          <ul>
+            <li>Led IT audits improving vulnerability management by 30%.</li>
+            <li>Streamlined event detection & firewall ops to meet 100% compliance.</li>
+            <li>Trained 200+ IT staff, reducing incidents by 25%.</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Aug 2023 – May 2024</div>
+        <div class="timeline-content">
+          <h3>🧑‍🏫 Graduate Teaching Assistant — George Mason University</h3>
+          <ul>
+            <li>Built Python tools to detect leaked credentials across 1M+ websites.</li>
+            <li>Mentored 100+ students, reducing project vulnerabilities by 40%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Mar 2020 – Aug 2022</div>
+        <div class="timeline-content">
+          <h3>🤞 Bug Bounty Hunter — Freelance</h3>
+          <ul>
+            <li>Discovered critical RCE, SSRF, and auth bypass bugs in 40+ orgs.</li>
+            <li>Authored reconnaissance tools; active in CTFs & security communities.</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Srisai Charan Rayudu. All rights reserved.</p>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" data-aos="zoom-in-up">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>ProtoP — Prototype Pollution Scanner</h3>
+        <p>A Golang-based scanner leveraging Chrome DevTools Protocol to detect prototype pollution vulnerabilities.</p>
+        <p><strong>Tech:</strong> Go, CDP, GitHub Actions</p>
+        <a href="https://github.com/CharanRayudu/ProtoP" target="_blank" class="btn">View on GitHub</a>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Automation Nuclei</h3>
+        <p>Automated scanning script using Nuclei templates for 500+ live subdomains using Bash and OSINT tools.</p>
+        <p><strong>Tech:</strong> Bash, Nuclei, Linux, Recon Tools</p>
+        <a href="https://github.com/CharanRayudu/Automation-Nuclei" target="_blank" class="btn">View on GitHub</a>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>Tiny Recon</h3>
+        <p>Recon script combining Nmap, WhatWeb, and crt.sh to scan 100+ subdomains with HTTP service fingerprinting.</p>
+        <p><strong>Tech:</strong> Bash, Nmap, WhatWeb, crt.sh</p>
+        <a href="https://github.com/CharanRayudu/Tiny-Recon" target="_blank" class="btn">View on GitHub</a>
+      </div>
+
     </div>
-  </footer>
-  
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
-  <script src="script.js"></script>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" data-aos="flip-up">
+  <div class="container">
+    <h2>Certifications & Achievements</h2>
+    <ul class="cert-list">
+      <li>🛡️ <a href="https://www.credly.com/badges/6683f6ca-95bb-4e78-803f-2a6155730daa" target="_blank">CompTIA Security+ CE (SY0-701)</a></li>
+      <li>☁️ <a href="https://www.credly.com/badges/f57609f5-7d35-42ba-a1da-5d4e4e89f82d" target="_blank">AWS Certified Cloud Practitioner</a></li>
+      <li>🎯 TryHackMe Rank: 20709 (Apr 2024)</li>
+      <li>🐞 Bugcrowd Rank: 4540 (Aug 2022)</li>
+      <li>🏆 Hall of Fame recognitions for 40+ organizations</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" data-aos="fade-up">
+  <div class="container">
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/mwkgepnz" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <div class="social-links">
+      <a href="mailto:charan.rayudu1784@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/charanrayudu" target="_blank">LinkedIn</a>
+      <a href="https://github.com/CharanRayudu" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Srisai Charan Rayudu. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
