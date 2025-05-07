@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const titles = [
       "Cybersecurity Engineer",
       "Red Teamer",
+      "Penetration Tester",
       "Bug Bounty Hunter"
     ];
   
