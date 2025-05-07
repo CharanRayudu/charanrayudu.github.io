@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.title = "Charan Rayudu | Cybersecurity Engineer";
   
     const titles = [
-      "Cybersecurity Engineer",
+      "Cyber Security Engineer",
       "Red Teamer",
       "Penetration Tester",
       "Bug Bounty Hunter"
