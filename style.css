@@ -164,4 +164,36 @@
     font-size: 0.9rem;
     color: #888;
   }
-    
+/* Navbar */
+.navbar {
+    background-color: #0d111c;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #00ffc3;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ffc3;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links li a {
+    color: #e0e0e0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  .nav-links li a:hover {
+    color: #00ffc3;
+  }
+  
