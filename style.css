@@ -336,6 +336,7 @@
   .hero-background-wrapper {
     position: relative;
     overflow: hidden;
+    height: 100vh; /* ✅ Add this to restrict to viewport height */
   }
   
   .animated-glow-bg {
@@ -350,7 +351,10 @@
     filter: blur(80px);
     opacity: 0.3;
     z-index: -1;
+    pointer-events: none; /* optional */
   }
+  
+
   
   @keyframes pulseGlow {
     0%, 100% {
