@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Fix tab title glitch
     document.title = "Charan Rayudu | Cybersecurity Engineer";
   
     const titles = [
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     function type() {
       if (!typewriterEl) return;
-  
       if (charIndex < titles[currentIndex].length) {
         typewriterEl.textContent += titles[currentIndex].charAt(charIndex);
         charIndex++;
@@ -33,26 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
     type();
   
-    // Cursor effect
-    const dot = document.createElement('div');
-    const trail = document.createElement('div');
-    dot.className = 'cursor-dot';
-    trail.className = 'cursor-trail';
-    document.body.append(dot, trail);
-  
-    document.addEventListener('mousemove', e => {
-      dot.style.left = `${e.pageX}px`;
-      dot.style.top = `${e.pageY}px`;
-      trail.style.left = `${e.pageX - 6}px`;
-      trail.style.top = `${e.pageY - 6}px`;
-    });
   });
   
-  // Optional: Parallax effect
-  document.addEventListener('scroll', () => {
+  // Optional Parallax Effect
+  document.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
-    document.querySelectorAll('.parallax-layer').forEach(layer => {
-      const speed = layer.getAttribute('data-speed');
+    document.querySelectorAll(".parallax-layer").forEach((layer) => {
+      const speed = layer.getAttribute("data-speed");
       layer.style.transform = `translateY(${scrollY * speed}px)`;
     });
   });

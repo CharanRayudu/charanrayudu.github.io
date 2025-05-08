@@ -21,26 +21,9 @@
   
   /* Cursor (Futuristic Trail) */
   body {
-    cursor: none;
+    cursor: auto;
   }
   
-  .cursor-dot, .cursor-trail {
-    position: fixed;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-  }
-  .cursor-dot {
-    width: 8px;
-    height: 8px;
-    background: #00ffc3;
-  }
-  .cursor-trail {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #00ffc3;
-    opacity: 0.5;
-  }
   
   /* Utility Classes */
   .flicker {
@@ -465,16 +448,6 @@
     100% { transform: translate(-50%, 20px); opacity: 0; }
   }
   
-  /* 3D Canvas Background */
-  #bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-  }
-  
   /* Animated Gradient Glow Background */
   .animated-glow-bg {
     position: absolute;
@@ -526,10 +499,9 @@
     
   .parallax-layer {
     position: absolute;
-    width: 200%;
-    height: 200%;
+    width: 120vw;
+    height: 120vh;
     background: radial-gradient(circle at 30% 30%, #00ffc3 0%, transparent 60%);
     z-index: -2;
     opacity: 0.1;
   }
-  
