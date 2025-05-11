@@ -58,10 +58,12 @@
     <div class="parallax-layer" data-speed="0.3"></div>
     <div class="animated-glow-bg"></div>
   
+    <div class="animated-grid"></div>
+  
     <section id="hero">
       <div class="container hero-flex">
         <div class="hero-text">
-          <h1 class="intro">Hi, I'm <span class="highlight">Charan Rayudu</span></h1>
+          <h1 class="intro cyberpunk-text">Hi, I'm <span class="highlight">Charan Rayudu</span></h1>
           <p class="tagline typewriter" id="typewriter"></p>
           <div class="cta-buttons">
             <a href="assets/resume.pdf" class="btn">View Resume</a>
@@ -85,7 +87,7 @@
   <div class="container">
     <h2>About Me</h2>
     <div class="about-content">
-      <img src="assets/profile.jpg" alt="Charan's Profile Picture" class="profile-pic" />
+      <img src="assets/profile.jpg" alt="Charan's Profile Picture" class="profile-pic hologram" />
       <p>
         I'm a cybersecurity engineer with a passion for ethical hacking, red teaming, and automating security workflows. I've helped secure 40+ organizations, delivered DevSecOps automation, and actively hunt bugs on platforms like HackerOne and Bugcrowd. I also train students and professionals on secure coding and vulnerability assessment.
       </p>
@@ -102,11 +104,11 @@
       <div class="timeline-item">
         <div class="timeline-date">Oct 2024 – Present</div>
         <div class="timeline-content">
-          <h3>🛡️ Cyber Security Engineer — DevFi Inc.</h3>
+          <h3>🛡️ Cyber Security Engineer, DevFi Inc., Fairfax, VA</h3>
           <ul>
-            <li>Led IT audits improving vulnerability management by 30%.</li>
-            <li>Streamlined event detection & firewall ops to meet 100% compliance.</li>
-            <li>Trained 200+ IT staff, reducing incidents by 25%.</li>
+            <li>Conducted internal red team assessments targeting web apps, APIs, and Linux-based infrastructure</li>
+            <li>Performed LLM penetration testing and prompt injection using OpenAI APIs and basic fuzzing techniques</li>
+            <li>Integrated Burp Suite Pro, Nuclei, and GitHub Actions to automate DAST in CI/CD pipelines</li>
           </ul>
         </div>
       </div>
@@ -114,10 +116,11 @@
       <div class="timeline-item">
         <div class="timeline-date">Aug 2023 – May 2024</div>
         <div class="timeline-content">
-          <h3>🧑‍🏫 Graduate Teaching Assistant — George Mason University</h3>
+          <h3>👨‍🏫 Graduate Teaching Assistant, George Mason University, Fairfax, VA</h3>
           <ul>
-            <li>Built Python tools to detect leaked credentials across 1M+ websites.</li>
-            <li>Mentored 100+ students, reducing project vulnerabilities by 40%.</li>
+            <li>Built Python tools for detecting API key leaks and sensitive tokens in public repositories</li>
+            <li>Taught secure coding, OWASP Top 10, and SAST concepts to 100+ students in lab sessions</li>
+            <li>Designed hands-on labs for web attacks using Docker, Nginx, and vulnerable Node.js apps</li>
           </ul>
         </div>
       </div>
@@ -125,10 +128,35 @@
       <div class="timeline-item">
         <div class="timeline-date">Mar 2020 – Aug 2022</div>
         <div class="timeline-content">
-          <h3>🤞 Bug Bounty Hunter — Freelance</h3>
+          <h3>🐞 Bug Bounty Hunter, Freelance, Remote</h3>
           <ul>
-            <li>Discovered critical RCE, SSRF, and auth bypass bugs in 40+ orgs.</li>
-            <li>Authored reconnaissance tools; active in CTFs & security communities.</li>
+            <li>Secured 40+ companies by reporting RCE, SSRF, IDOR, and Broken Auth via HackerOne and Bugcrowd</li>
+            <li>Used Nmap NSE, Burp Suite Pro, and custom Python scripts for reconnaissance and exploit chaining</li>
+            <li>Focused on API security testing, SSO misconfigurations, and token-based auth bypass</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2021 – Dec 2021</div>
+        <div class="timeline-content">
+          <h3>🕵️‍♂️ Penetration Tester (US-Based NDA Client, Remote)</h3>
+          <ul>
+            <li>Performed SAST and manual code review for JavaScript and Python microservices</li>
+            <li>Identified 3 CVEs, including RCE in internal APIs, and reported them with CVSS scoring and PoCs</li>
+            <li>Led web and API pentests using Metasploit, ZAP, and Burp Suite Pro across staging environments</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2020 – May 2021</div>
+        <div class="timeline-content">
+          <h3>🧑‍💻 Red Team Penetration Tester, Fresh Digital, India</h3>
+          <ul>
+            <li>Performed internal red team assessments and mapped privilege escalation paths in Linux targets</li>
+            <li>Exploited SQLi, XSS, and CSRF vulnerabilities on production web apps using Burp Suite and manual payloads</li>
+            <li>Reported findings with risk scores and remediation guidance aligned to OWASP and CVSS</li>
           </ul>
         </div>
       </div>
@@ -143,22 +171,22 @@
     <h2>Projects</h2>
     <div class="project-grid">
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>ProtoP — Prototype Pollution Scanner</h3>
+        <div class="project-card neon-border card-3d" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="glitch">ProtoP — Prototype Pollution Scanner</h3>
         <p>A Golang-based scanner leveraging Chrome DevTools Protocol to detect prototype pollution vulnerabilities.</p>
         <p><strong>Tech:</strong> Go, CDP, GitHub Actions</p>
         <a href="https://github.com/CharanRayudu/ProtoP" target="_blank" class="btn">View on GitHub</a>
       </div>
 
-      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-        <h3>Automation Nuclei</h3>
+      <div class="project-card neon-border card-3d" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="glitch">Automation Nuclei</h3>
         <p>Automated scanning script using Nuclei templates for 500+ live subdomains using Bash and OSINT tools.</p>
         <p><strong>Tech:</strong> Bash, Nuclei, Linux, Recon Tools</p>
         <a href="https://github.com/CharanRayudu/Automation-Nuclei" target="_blank" class="btn">View on GitHub</a>
       </div>
 
-      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-        <h3>Tiny Recon</h3>
+      <div class="project-card neon-border card-3d" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="glitch">Tiny Recon</h3>
         <p>Recon script combining Nmap, WhatWeb, and crt.sh to scan 100+ subdomains with HTTP service fingerprinting.</p>
         <p><strong>Tech:</strong> Bash, Nmap, WhatWeb, crt.sh</p>
         <a href="https://github.com/CharanRayudu/Tiny-Recon" target="_blank" class="btn">View on GitHub</a>
@@ -182,7 +210,106 @@
   </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Interactive Timeline -->
+<section id="timeline" data-aos="fade-up">
+  <div class="container">
+    <h2>Interactive Timeline</h2>
+    <div id="timeline-container"></div>
+  </div>
+</section>
+
+<!-- Skills Visualization -->
+<section id="skills" data-aos="fade-up">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <canvas id="skills-chart"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog" data-aos="fade-up">
+  <div class="container">
+    <h2>Blog</h2>
+    <div class="blog-posts">
+      <article class="blog-post">
+        <h3><a href="https://www.linkedin.com/pulse/mastering-command-line-essential-linux-commands-charan-rayudu-rv8xe/" target="_blank">Mastering the Command Line: Essential Linux Commands</a></h3>
+        <p>Learn about the fundamental Linux commands and their uses.</p>
+      </article>
+      <article class="blog-post">
+        <h3><a href="https://www.linkedin.com/pulse/copy-siem-lab-using-elastic-cloud-charan-rayudu-n2gue/" target="_blank">SIEM home lab using Elastic Cloud</a></h3>
+        <p>Learn how to set up a SIEM home lab using Elastic Cloud.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" data-aos="fade-up">
+  <div class="container">
+    <h2>Testimonials</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>"Charan is an exceptional cybersecurity engineer with a deep understanding of security protocols."</p>
+        <cite>- John Doe, CEO of TechCorp</cite>
+      </div>
+      <div class="testimonial">
+        <p>"Working with Charan has significantly improved our security posture."</p>
+        <cite>- Jane Smith, CTO of SecureNet</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements Badges -->
+<section id="achievements" data-aos="fade-up">
+  <div class="container">
+    <h2>Achievements</h2>
+    <div class="badges">
+      <img src="assets/badges/security-plus.png" alt="Security+ Badge" class="badge">
+      <img src="assets/badges/aws-certified.png" alt="AWS Certified Badge" class="badge">
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Maps -->
+<section id="map" data-aos="fade-up">
+  <div class="container">
+    <h2>Global Presence</h2>
+    <div id="map-container"></div>
+  </div>
+</section>
+
+<!-- Video Introduction -->
+<section id="video-intro" data-aos="fade-up">
+  <div class="container">
+    <h2>Video Introduction</h2>
+    <video controls>
+      <source src="assets/video/intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" data-aos="fade-up">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What services do you offer?</h3>
+        <p>I offer cybersecurity consulting, penetration testing, and security automation services.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can I contact you?</h3>
+        <p>You can reach me via email or through the contact form on this page.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Place Contact and Footer at the end, before overlays and scripts -->
 <section id="contact" data-aos="fade-up">
   <div class="container">
     <h2>Contact</h2>
@@ -194,7 +321,6 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <div class="container">
     <p>&copy; 2025 Srisai Charan Rayudu. All rights reserved.</p>
@@ -207,6 +333,12 @@
   AOS.init({ duration: 1000, once: true });
 </script>
 <script src="script.js" defer></script>
+
+<!-- At the end of the body, before the closing </body> tag -->
+<div class="particle-bg"></div>
+<div class="cursor"></div>
+<div class="cursor-trail"></div>
+<div class="scanline"></div>
 
 </body>
 </html>

@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     type();
-  
   });
   
-  // Optional Parallax Effect
+  // Optional parallax background effect
   document.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
     document.querySelectorAll(".parallax-layer").forEach((layer) => {
@@ -41,4 +40,30 @@ document.addEventListener("DOMContentLoaded", () => {
       layer.style.transform = `translateY(${scrollY * speed}px)`;
     });
   });
+  
+  // Animated Cursor
+  const cursor = document.querySelector('.cursor');
+  const cursorTrail = document.querySelector('.cursor-trail');
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    setTimeout(() => {
+      cursorTrail.style.left = e.clientX + 'px';
+      cursorTrail.style.top = e.clientY + 'px';
+    }, 100);
+  });
+
+  // Particle Background
+  const particleBg = document.querySelector('.particle-bg');
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.width = Math.random() * 5 + 'px';
+    particle.style.height = particle.style.width;
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.top = Math.random() * 100 + 'vh';
+    particle.style.animationDuration = Math.random() * 10 + 5 + 's';
+    particleBg.appendChild(particle);
+  }
   

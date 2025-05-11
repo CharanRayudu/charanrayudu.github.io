@@ -505,3 +505,321 @@
     z-index: -2;
     opacity: 0.1;
   }
+
+/* New Futuristic Styles and Animations */
+
+/* Animated Neon Borders */
+.neon-border {
+  border: 0.5px solid transparent;
+  background-image: linear-gradient(#101521, #101521),
+    radial-gradient(circle at top left, #00ffc3, #ff0099);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: neonPulse 3s ease-in-out infinite;
+}
+@keyframes neonPulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+/* Animated Background Grid */
+.animated-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 255, 195, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 195, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: gridMove 20s linear infinite;
+  z-index: -1;
+}
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+/* Hologram Flicker Effect */
+.hologram {
+  animation: hologramFlicker 2s infinite;
+}
+@keyframes hologramFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Enhanced Button & Card Hover Animations */
+.btn, .project-card {
+  transition: all 0.4s ease;
+}
+.btn:hover, .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 195, 0.3);
+}
+
+/* Animated Cursor */
+body {
+  cursor: none;
+}
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 255, 195, 0.5);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+.cursor-trail {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 255, 195, 0.3);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.2s ease;
+}
+
+/* Subtle Particle Background */
+.particle-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, #0a0f1a, #0d111c);
+  z-index: -2;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  background: rgba(0, 255, 195, 0.5);
+  border-radius: 50%;
+  animation: particleFloat 10s infinite linear;
+}
+@keyframes particleFloat {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-100vh) translateX(100vw); }
+}
+
+/* Additional Futuristic Styles and Animations */
+
+/* Cyberpunk Text Effect */
+.cyberpunk-text {
+  color: #00ffc3;
+  text-shadow: 0 0 5px #00ffc3, 0 0 10px #00ffc3, 0 0 20px #00ffc3;
+  animation: cyberpunkPulse 2s infinite;
+}
+@keyframes cyberpunkPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Glitch Effect */
+.glitch {
+  position: relative;
+  animation: glitch 1s infinite;
+}
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* 3D Card Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.card-3d:hover {
+  transform: rotateY(10deg) rotateX(10deg);
+}
+
+/* Scanline Overlay */
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 255, 195, 0.1) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: scanline 10s linear infinite;
+}
+@keyframes scanline {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* New Sections Styles */
+
+/* Interactive Timeline */
+#timeline {
+  padding: 4rem 0;
+}
+#timeline-container {
+  margin-top: 2rem;
+}
+
+/* Skills Visualization */
+#skills {
+  padding: 4rem 0;
+}
+.skills-container {
+  margin-top: 2rem;
+}
+
+/* Project Showcase */
+#project-showcase {
+  padding: 4rem 0;
+}
+.project-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.project-showcase-item {
+  border: 1px solid #00ffc3;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #101521;
+}
+
+/* Blog Section */
+#blog {
+  padding: 4rem 0;
+}
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.blog-post {
+  border: 1px solid #00ffc3;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #101521;
+}
+
+/* Testimonials */
+#testimonials {
+  padding: 4rem 0;
+}
+.testimonial-slider {
+  margin-top: 2rem;
+}
+.testimonial {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Contact Form */
+#contact-form {
+  padding: 4rem 0;
+}
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Social Media Integration */
+#social-media {
+  padding: 4rem 0;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Dark/Light Mode Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Language Switcher */
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  z-index: 1000;
+}
+
+/* Achievements Badges */
+#achievements {
+  padding: 4rem 0;
+}
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.badge {
+  width: 100px;
+  height: 100px;
+}
+
+/* Interactive Maps */
+#map {
+  padding: 4rem 0;
+}
+#map-container {
+  height: 400px;
+  margin-top: 1rem;
+}
+
+/* Video Introduction */
+#video-intro {
+  padding: 4rem 0;
+}
+video {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  display: block;
+}
+
+/* FAQ Section */
+#faq {
+  padding: 4rem 0;
+}
+.faq-list {
+  margin-top: 2rem;
+}
+.faq-item {
+  margin-bottom: 1rem;
+}
+
+/* Newsletter Signup */
+#newsletter {
+  padding: 4rem 0;
+}
+.newsletter-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Accessibility Features */
+.accessibility-features {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 1rem;
+}
