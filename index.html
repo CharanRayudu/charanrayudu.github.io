@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
         <link rel="stylesheet" href="style.min.css" />
 
@@ -27,65 +27,62 @@
         <!-- End Cloudflare Web Analytics -->
       </head>      
 <body>
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrix-rain" class="matrix-rain"></canvas>
 
+    <!-- Navbar -->
+    <nav class="navbar cyberpunk-border">
+        <div class="container nav-container">
+            <h1 class="logo glitch" data-text="Charan">Charan</h1>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="burger">
+                <span></span><span></span><span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="#hero" class="cyberpunk-text">Home</a></li>
+                <li><a href="assets/resume.pdf" target="_blank" class="cyberpunk-text">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  
-
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="container nav-container">
-    <h1 class="logo">Charan</h1>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="burger">
-      <span></span><span></span><span></span>
-    </label>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<div class="hero-background-wrapper">
-    <!-- ✅ Moved background circles inside hero wrapper -->
-    <div class="background-circles">
-      <div class="circle circle1"></div>
-      <div class="circle circle2"></div>
-      <div class="circle circle3"></div>
+    <!-- Hero Section -->
+    <div class="hero-background-wrapper">
+        <div class="background-circles">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+        </div>
+    
+        <div class="parallax-layer" data-speed="0.3"></div>
+        <div class="animated-glow-bg"></div>
+        <div class="animated-grid"></div>
+    
+        <section id="hero">
+            <div class="container hero-flex">
+                <div class="hero-text">
+                    <h1 class="intro cyberpunk-text">Hi, I'm <span class="highlight glitch" data-text="Charan Rayudu">Charan Rayudu</span></h1>
+                    <p class="tagline typewriter" id="typewriter"></p>
+                    <div class="cta-buttons">
+                        <a href="assets/resume.pdf" class="btn cyberpunk-border">View Resume</a>
+                        <a href="https://github.com/CharanRayudu" class="btn cyberpunk-border">GitHub</a>
+                        <a href="https://linkedin.com/in/charanrayudu" class="btn cyberpunk-border">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="hero-image cyberpunk-border">
+                    <img src="assets/img/charan-3d.png" alt="Charan 3D Avatar" />
+                </div>
+            </div>
+            <a href="#about" class="scroll-down" aria-label="Scroll Down">
+                <span></span>
+            </a>
+        </section>
     </div>
-  
-    <div class="parallax-layer" data-speed="0.3"></div>
-    <div class="animated-glow-bg"></div>
-  
-    <div class="animated-grid"></div>
-  
-    <section id="hero">
-      <div class="container hero-flex">
-        <div class="hero-text">
-          <h1 class="intro cyberpunk-text">Hi, I'm <span class="highlight">Charan Rayudu</span></h1>
-          <p class="tagline typewriter" id="typewriter"></p>
-          <div class="cta-buttons">
-            <a href="assets/resume.pdf" class="btn">View Resume</a>
-            <a href="https://github.com/CharanRayudu" class="btn">GitHub</a>
-            <a href="https://linkedin.com/in/charanrayudu" class="btn">LinkedIn</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="assets/img/charan-3d.png" alt="Charan 3D Avatar" />
-        </div>
-      </div>
-      <a href="#about" class="scroll-down" aria-label="Scroll Down">
-        <span></span>
-      </a>
-    </section>
-  </div>
   
 
 <!-- About Me Section -->
-<section id="about" data-aos="fade-right">
+<section id="about" data-aos="fade-right" class="cyberpunk-border">
   <div class="container">
-    <h2>About Me</h2>
+    <h2 class="cyberpunk-text">About Me</h2>
     <div class="about-content">
       <img src="assets/profile.jpg" alt="Charan's Profile Picture" class="profile-pic hologram" />
       <p>
@@ -96,9 +93,9 @@
 </section>
 
 <!-- Experience Section -->
-<section id="experience" data-aos="fade-left">
+<section id="experience" data-aos="fade-left" class="cyberpunk-border">
   <div class="container">
-    <h2>Experience</h2>
+    <h2 class="cyberpunk-text">Experience</h2>
     <div class="timeline">
 
       <div class="timeline-item">
@@ -168,7 +165,7 @@
 <!-- Projects Section -->
 <section id="projects" data-aos="zoom-in-up">
   <div class="container">
-    <h2>Projects</h2>
+    <h2 class="cyberpunk-text">Projects</h2>
     <div class="project-grid">
 
         <div class="project-card neon-border card-3d" data-aos="fade-up" data-aos-delay="100">
@@ -197,9 +194,9 @@
 </section>
 
 <!-- Certifications Section -->
-<section id="certifications" data-aos="flip-up">
+<section id="certifications" data-aos="flip-up" class="cyberpunk-border">
   <div class="container">
-    <h2>Certifications & Achievements</h2>
+    <h2 class="cyberpunk-text">Certifications & Achievements</h2>
     <ul class="cert-list">
       <li>🛡️ <a href="https://www.credly.com/badges/6683f6ca-95bb-4e78-803f-2a6155730daa" target="_blank">CompTIA Security+ CE (SY0-701)</a></li>
       <li>☁️ <a href="https://www.credly.com/badges/f57609f5-7d35-42ba-a1da-5d4e4e89f82d" target="_blank">AWS Certified Cloud Practitioner</a></li>
@@ -219,9 +216,9 @@
 </section>
 
 <!-- Skills Visualization -->
-<section id="skills" data-aos="fade-up">
+<section id="skills" data-aos="fade-up" class="cyberpunk-border">
   <div class="container">
-    <h2>Skills</h2>
+    <h2 class="cyberpunk-text">Skills</h2>
     <div class="skills-container">
       <canvas id="skills-chart"></canvas>
     </div>
@@ -229,9 +226,9 @@
 </section>
 
 <!-- Blog Section -->
-<section id="blog" data-aos="fade-up">
+<section id="blog" data-aos="fade-up" class="cyberpunk-border">
   <div class="container">
-    <h2>Blog</h2>
+    <h2 class="cyberpunk-text">Blog</h2>
     <div class="blog-posts">
       <article class="blog-post">
         <h3><a href="https://www.linkedin.com/pulse/mastering-command-line-essential-linux-commands-charan-rayudu-rv8xe/" target="_blank">Mastering the Command Line: Essential Linux Commands</a></h3>
@@ -339,6 +336,45 @@
 <div class="cursor"></div>
 <div class="cursor-trail"></div>
 <div class="scanline"></div>
+
+<script>
+    // Matrix Rain Effect
+    const canvas = document.getElementById('matrix-rain');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+    const charArray = chars.split('');
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+
+    const drops = [];
+    for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+    }
+
+    function draw() {
+        ctx.fillStyle = 'rgba(10, 15, 26, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#00ffc3';
+        ctx.font = fontSize + 'px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = charArray[Math.floor(Math.random() * charArray.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+
+    setInterval(draw, 33);
+</script>
 
 </body>
 </html>
